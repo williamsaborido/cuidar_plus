@@ -1,5 +1,5 @@
 import 'package:dener/util/navigator_key.dart';
-import 'package:dener/views/login/login_view.dart';
+import 'package:dener/views/welcome/welcome_view.dart';
 import 'package:dener/views/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 
