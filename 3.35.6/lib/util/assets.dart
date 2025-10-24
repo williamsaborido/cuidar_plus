@@ -5,4 +5,5 @@ class Assets {
   static const String splashLogo = 'assets/images/splash_logo.png';  
   static const String avatarDonator = 'assets/images/avatar_donator.png';
   static const String avatarRecipient = 'assets/images/avatar_recipient.png';
+  static const String backArrow = 'assets/images/back_arrow.png';
 }

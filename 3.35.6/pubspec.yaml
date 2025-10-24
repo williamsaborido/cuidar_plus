@@ -88,13 +88,21 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
   fonts:
-    - family: Arima
-      fonts:
-        - asset: assets/fonts/arima/Arima-Regular.ttf
-        - asset: assets/fonts/arima/Arima-Bold.ttf
-          weight: 700
     - family: Arima Madurai
       fonts:
-        - asset: assets/fonts/arima_madurai/ArimaMadurai-Regular.ttf
+        - asset: assets/fonts/arima_madurai/ArimaMadurai-Black.ttf
+          weight: 900
+        - asset: assets/fonts/arima_madurai/ArimaMadurai-ExtraBold.ttf
+          weight: 800
         - asset: assets/fonts/arima_madurai/ArimaMadurai-Bold.ttf
-          weight: 600
+          weight: 700
+        - asset: assets/fonts/arima_madurai/ArimaMadurai-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/arima_madurai/ArimaMadurai-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/arima_madurai/ArimaMadurai-Light.ttf
+          weight: 300
+        - asset: assets/fonts/arima_madurai/ArimaMadurai-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/arima_madurai/ArimaMadurai-Thin.ttf
+          weight: 100

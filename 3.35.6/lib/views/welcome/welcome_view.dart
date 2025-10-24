@@ -1,6 +1,7 @@
 import 'package:dener/components/profile_button/profile_button_component.dart';
 import 'package:dener/util/assets.dart';
 import 'package:dener/util/base_state.dart';
+import 'package:dener/util/fonts.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatefulWidget {
@@ -38,24 +39,13 @@ class _LoginViewState extends BaseState<LoginView> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text(
-                'Bem-vindo',
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Arima Madurai',
-                ),
-              ),
+              child: Text('Bem-vindo',style: Fonts.titleBlack),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 'Contamos com você para construir uma\nrede de apoio e solidariedade.',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontFamily: 'Arima Madurai',
-                  color: Colors.grey[700],
-                ),
+                style: Fonts.regularGrey,
               ),
             ),
             SizedBox(height: 40),
@@ -67,7 +57,7 @@ class _LoginViewState extends BaseState<LoginView> {
                   title: 'Sou Doador',
                   assetImage: Assets.avatarDonator,
                   onTap: () {
-                    print('Doador');
+                    navigateTo('/donator/login');
                   },
                 ),
                 ProfileButtonComponent(

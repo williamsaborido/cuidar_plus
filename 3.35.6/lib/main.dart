@@ -1,4 +1,5 @@
 import 'package:dener/util/navigator_key.dart';
+import 'package:dener/views/donator/login/donator_login_view.dart';
 import 'package:dener/views/welcome/welcome_view.dart';
 import 'package:dener/views/splash/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,7 @@ class App extends StatelessWidget{
       routes: {
         '/': (context) => const SplashView(),
         '/login': (context) => const LoginView(),
+        '/donator/login': (context) => const DonatorLoginView(),
       },
       navigatorKey: navigatorKey,
     );    

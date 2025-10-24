@@ -1,17 +1,22 @@
+import 'package:dener/util/fonts.dart';
 import 'package:flutter/material.dart';
 
 class ProfileButtonComponent extends StatefulWidget {
   final String title;
   final String assetImage;
-  final VoidCallback? onTap; 
-  const ProfileButtonComponent({ required this.title, required this.assetImage, this.onTap, super.key});
+  final VoidCallback? onTap;
+  const ProfileButtonComponent({
+    required this.title,
+    required this.assetImage,
+    this.onTap,
+    super.key,
+  });
 
   @override
   State<ProfileButtonComponent> createState() => _ProfileButtonComponentState();
 }
 
 class _ProfileButtonComponentState extends State<ProfileButtonComponent> {
-
   var activeColor = Color(0x00FFFFFF);
 
   void _onEnter(PointerEvent details) {
@@ -36,7 +41,7 @@ class _ProfileButtonComponentState extends State<ProfileButtonComponent> {
     setState(() {
       activeColor = Color(0x00FFFFFF);
     });
-  }    
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,14 +49,7 @@ class _ProfileButtonComponentState extends State<ProfileButtonComponent> {
       spacing: 10,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(
-          widget.title,
-          style: TextStyle(
-            fontSize: 24,
-            fontFamily: 'Arima Madurai',
-            color: Colors.grey[700],
-          ),
-        ),
+        Text(widget.title, style: Fonts.titleGrey),
         MouseRegion(
           onEnter: _onEnter,
           onExit: _onExit,
@@ -62,10 +60,7 @@ class _ProfileButtonComponentState extends State<ProfileButtonComponent> {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                CircleAvatar(
-                  radius: 60,
-                  backgroundColor: activeColor,
-                ),
+                CircleAvatar(radius: 60, backgroundColor: activeColor),
                 CircleAvatar(
                   radius: 45,
                   backgroundImage: AssetImage(widget.assetImage),
