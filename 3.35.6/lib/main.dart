@@ -1,5 +1,7 @@
+import 'package:dener/util/app_text_styles.dart';
 import 'package:dener/util/navigator_key.dart';
 import 'package:dener/views/donator/login/donator_login_view.dart';
+import 'package:dener/views/donator/signin/form/donator_signin_form.dart';
 import 'package:dener/views/welcome/welcome_view.dart';
 import 'package:dener/views/splash/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -18,18 +20,21 @@ class App extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),      
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const SplashView(),
-        '/login': (context) => const LoginView(),
-        '/donator/login': (context) => const DonatorLoginView(),
-      },
-      navigatorKey: navigatorKey,
+    return AppTextStyles(
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),      
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const SplashView(),
+          '/login': (context) => const LoginView(),
+          '/donator/login': (context) => const DonatorLoginView(),
+          '/donator/signin/form': (context) => const DonatorSigninForm(),
+        },
+        navigatorKey: navigatorKey,
+      ),
     );    
   }
 }

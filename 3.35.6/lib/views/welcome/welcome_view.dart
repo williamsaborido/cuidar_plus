@@ -1,7 +1,7 @@
-import 'package:dener/components/profile_button/profile_button_component.dart';
+import 'package:dener/components/app_profile_button/app_profile_button_component.dart';
 import 'package:dener/util/assets.dart';
 import 'package:dener/util/base_state.dart';
-import 'package:dener/util/fonts.dart';
+import 'package:dener/util/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatefulWidget {
@@ -12,8 +12,10 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends BaseState<LoginView> {
+
   @override
   Widget build(BuildContext context) {
+    final AppTextStyles textStyles = AppTextStyles.of(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -39,13 +41,13 @@ class _LoginViewState extends BaseState<LoginView> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text('Bem-vindo',style: Fonts.titleBlack),
+              child: Text('Bem-vindo',style: textStyles.titleBlack),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 'Contamos com você para construir uma\nrede de apoio e solidariedade.',
-                style: Fonts.regularGrey,
+                style: textStyles.regularGrey,
               ),
             ),
             SizedBox(height: 40),
@@ -53,14 +55,14 @@ class _LoginViewState extends BaseState<LoginView> {
               spacing: 20,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [                
-                ProfileButtonComponent(
+                AppProfileButtonComponent(
                   title: 'Sou Doador',
                   assetImage: Assets.avatarDonator,
                   onTap: () {
                     navigateTo('/donator/login');
                   },
                 ),
-                ProfileButtonComponent(
+                AppProfileButtonComponent(
                   title: 'Sou Receptor',
                   assetImage: Assets.avatarRecipient,
                   onTap: () {

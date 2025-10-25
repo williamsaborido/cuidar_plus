@@ -1,44 +1,35 @@
 import 'package:flutter/material.dart';
 
-class TextFieldComponent extends StatefulWidget {
-  const TextFieldComponent({this.labelText, this.onChanged, super.key});
-
+class TextFieldComponent extends StatelessWidget {
   final String? labelText;
-  final void Function(String)? onChanged;
+  final bool masked;
 
-  @override
-  State<TextFieldComponent> createState() => _TextFieldComponentState();
-}
+  final _visible = ValueNotifier<bool>(false);
 
-class _TextFieldComponentState extends State<TextFieldComponent> {
-
-  final controller = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    controller.addListener(() {
-      if (widget.onChanged != null) {
-        widget.onChanged!(controller.text);
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
+  TextFieldComponent({this.labelText, this.masked = false, super.key});
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      keyboardType: TextInputType.text,
-      decoration: InputDecoration(
-        labelText: widget.labelText,            
-        border: OutlineInputBorder(),
-      ),
+    return ListenableBuilder(
+      listenable: _visible,
+      builder: (context, _) {
+        return TextFormField(
+          obscureText: masked && !_visible.value,
+          keyboardType: TextInputType.text,
+          decoration: InputDecoration(
+            labelText: labelText,
+            border: OutlineInputBorder(),
+            suffixIcon: masked
+                ? GestureDetector(
+                    onTap: () => _visible.value = !_visible.value,
+                    child: Icon(
+                      _visible.value ? Icons.visibility : Icons.visibility_off,
+                    ),
+                  )
+                : null,
+          ),
+        );
+      },
     );
   }
 }

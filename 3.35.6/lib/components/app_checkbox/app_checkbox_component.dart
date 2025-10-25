@@ -1,15 +1,15 @@
-import 'package:dener/util/fonts.dart';
+import 'package:dener/util/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-class CheckboxComponent extends StatelessWidget {
+class AppCheckboxComponent extends StatelessWidget {
   final _value = ValueNotifier<bool>(false);
-
   final String text;
 
-  CheckboxComponent({required this.text, super.key});
+  AppCheckboxComponent({required this.text, super.key});
 
   @override
   Widget build(BuildContext context) {
+    final textStyles = AppTextStyles.of(context);
     return Row(
       children: [
         ListenableBuilder(
@@ -23,7 +23,7 @@ class CheckboxComponent extends StatelessWidget {
             );
           }
         ),
-        Text(text, style: Fonts.regularBlack),
+        Text(text, style: textStyles.regularBlack),
       ],
     );
   }

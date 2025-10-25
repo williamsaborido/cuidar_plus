@@ -1,10 +1,9 @@
-import 'package:dener/components/button/button_component.dart';
-import 'package:dener/components/checkbox/checkbox_component.dart';
-import 'package:dener/components/masked_text_field/masked_text_field_component.dart';
+import 'package:dener/components/app_button/app_button_component.dart';
+import 'package:dener/components/app_checkbox/app_checkbox_component.dart';
 import 'package:dener/components/text_field/text_field_component.dart';
 import 'package:dener/util/assets.dart';
 import 'package:dener/util/base_state.dart';
-import 'package:dener/util/fonts.dart';
+import 'package:dener/util/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class DonatorLoginView extends StatefulWidget {
@@ -17,6 +16,7 @@ class DonatorLoginView extends StatefulWidget {
 class _DonatorLoginViewState extends BaseState<DonatorLoginView> {
   @override
   Widget build(BuildContext context) {
+    final textStyles = AppTextStyles.of(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -43,10 +43,10 @@ class _DonatorLoginViewState extends BaseState<DonatorLoginView> {
                     radius: 45,
                     backgroundImage: AssetImage(Assets.avatarDonator),
                   ),
-                  Text('Olá, doador,', style: Fonts.titleBlack),
+                  Text('Olá, doador,', style: textStyles.titleBlack),
                   Text(
                     'Sua generosidade constrói pontes de esperança. Junte-se a nós para fazer a diferença na vida de quem precisa.',
-                    style: Fonts.regularBlack,
+                    style: textStyles.regularBlack,
                   ),
                 ],
               ),
@@ -58,19 +58,19 @@ class _DonatorLoginViewState extends BaseState<DonatorLoginView> {
             SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: MaskedTextFieldComponent(labelText: 'Senha'),
+              child: TextFieldComponent(labelText: 'Senha', masked: true),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: CheckboxComponent(text: 'Lembrar senha'),
+              child: AppCheckboxComponent(text: 'Lembrar senha'),
             ),
             SizedBox(height: 10),
             Row(
               spacing: 20,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ButtonComponent(text: 'Login', onPressed: () {},),
-                ButtonComponent(text: 'Cadastro', onPressed: (){},),
+                AppButtonComponent(text: 'Login', onPressed: () {},),
+                AppButtonComponent(text: 'Cadastro', onPressed:() => navigateTo('/donator/signin/form')),
               ],
             ),
             SizedBox(height: 40),
