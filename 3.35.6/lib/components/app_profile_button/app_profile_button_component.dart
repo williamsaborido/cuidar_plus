@@ -2,11 +2,16 @@ import 'package:dener/util/app_text_styles.dart';
 import 'package:dener/util/base_state.dart';
 import 'package:flutter/material.dart';
 
+/// Botão de seleção de perfil (doador ou receptor) com imagem e título
 class AppProfileButtonComponent extends StatefulWidget {
+  /// Título do botão
   final String title;
+  /// Imagem do botão
   final String assetImage;
+  /// Ação ao clicar no botão
   final VoidCallback? onTap;
 
+  /// Cria um botão de seleção de perfil (doador ou receptor) com imagem e título
   const AppProfileButtonComponent({
     required this.title,
     required this.assetImage,
@@ -77,5 +82,3 @@ var activeColor = Color(0x00FFFFFF);
     );
   }
 }
-
-//0xFFC295FC

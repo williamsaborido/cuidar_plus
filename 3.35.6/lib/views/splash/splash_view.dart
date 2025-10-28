@@ -3,7 +3,9 @@ import 'package:dener/util/base_state.dart';
 import 'package:dener/views/splash/splash_view_controller.dart';
 import 'package:flutter/material.dart';
 
+/// Tela de splash da aplicação (inicialização de dados e serviços)
 class SplashView extends StatefulWidget {
+  /// Cria a tela de splash da aplicação (inicialização de dados e serviços)
   const SplashView({super.key});
 
   @override
@@ -15,7 +17,7 @@ class _SplashViewState extends BaseState<SplashView> {
 @override
   onInit() {   
     Future.delayed(Duration(seconds: 2), () {
-      navigateToAndReset('/login');
+      navigateToAndReset('/welcome');
     });
   }
 

@@ -1,11 +1,16 @@
 import 'package:dener/util/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
+/// Botão estilizado com borda arredondada
 class AppButtonComponent extends StatelessWidget {
-  final String text;
+  /// Texto do botão  
+  final String labelText;
+
+  /// Ação ao pressionar o botão
   final VoidCallback? onPressed;
 
-  const AppButtonComponent({required this.text, this.onPressed, super.key});
+  /// Cria um botão estilizado com borda arredondada
+  const AppButtonComponent({required this.labelText, this.onPressed, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +24,7 @@ class AppButtonComponent extends StatelessWidget {
         onPressed: onPressed,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: Text(text, style: textStyles.buttonBlack),
+          child: Text(labelText, style: textStyles.buttonBlack),
         ),
       ),
     );

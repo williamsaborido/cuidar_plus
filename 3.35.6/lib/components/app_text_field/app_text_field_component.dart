@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
+/// Campo de texto estilizado com bordas inferiores arredondadas
 class AppTextFieldComponent extends StatelessWidget {
+  /// Texto do rótulo do campo
   final String? labelText;
+  
+  /// Indica se o campo é de senha (oculta o texto)
   final bool masked;
+
   final _visible = ValueNotifier<bool>(false);
 
   final _border = UnderlineInputBorder(
@@ -10,6 +15,7 @@ class AppTextFieldComponent extends StatelessWidget {
     borderSide: BorderSide(color: Color(0xFF000000), width: 5),
   );
 
+  /// Cria um campo de texto estilizado com bordas inferiores arredondadas
   AppTextFieldComponent({this.labelText, this.masked = false, super.key});
 
   @override

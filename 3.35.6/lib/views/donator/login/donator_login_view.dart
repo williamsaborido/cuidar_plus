@@ -6,7 +6,9 @@ import 'package:dener/util/base_state.dart';
 import 'package:dener/util/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
+/// Tela de login do doador
 class DonatorLoginView extends StatefulWidget {
+  /// Cria a tela de login do doador
   const DonatorLoginView({super.key});
 
   @override
@@ -62,15 +64,15 @@ class _DonatorLoginViewState extends BaseState<DonatorLoginView> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: AppCheckboxComponent(text: 'Lembrar senha'),
+              child: AppCheckboxComponent(labelText: 'Lembrar senha'),
             ),
             SizedBox(height: 10),
             Row(
               spacing: 20,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                AppButtonComponent(text: 'Login', onPressed: () {},),
-                AppButtonComponent(text: 'Cadastro', onPressed:() => navigateTo('/donator/signin/form')),
+                AppButtonComponent(labelText: 'Login', onPressed: () {},),
+                AppButtonComponent(labelText: 'Cadastro', onPressed:() => navigateTo('/donator/signup/form')),
               ],
             ),
             SizedBox(height: 40),

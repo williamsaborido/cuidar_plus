@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 
+/// Campo de texto (padrão Material/Android)
 class TextFieldComponent extends StatelessWidget {
+  /// Texto do rótulo do campo
   final String? labelText;
+
+  /// Indica se o campo é de senha (oculta o texto)
   final bool masked;
 
   final _visible = ValueNotifier<bool>(false);
 
+  /// Cria um campo de texto (padrão Material/Android)
   TextFieldComponent({this.labelText, this.masked = false, super.key});
 
   @override

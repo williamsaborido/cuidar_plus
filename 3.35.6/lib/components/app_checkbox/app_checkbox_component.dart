@@ -1,11 +1,15 @@
 import 'package:dener/util/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
+/// Checkbox (seleção de opções) com um texto explicativo
 class AppCheckboxComponent extends StatelessWidget {
   final _value = ValueNotifier<bool>(false);
-  final String text;
+  
+  /// Texto do rótulo do campo
+  final String labelText;
 
-  AppCheckboxComponent({required this.text, super.key});
+  /// Cria um checkbox (seleção de opções) com um texto explicativo
+  AppCheckboxComponent({required this.labelText, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class AppCheckboxComponent extends StatelessWidget {
             );
           }
         ),
-        Text(text, style: textStyles.regularBlack),
+        Text(labelText, style: textStyles.regularBlack),
       ],
     );
   }

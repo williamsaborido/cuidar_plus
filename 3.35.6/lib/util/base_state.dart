@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Classe base para uso do contexo para navegação, snackbar e tamanho de tela
 abstract class BaseState<T extends StatefulWidget> extends State<T> {
   @override
   void initState() {
@@ -7,12 +8,16 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
     WidgetsBinding.instance.addPostFrameCallback((_) => onInit());
   }
 
+  /// Método chamado após a inicialização do widget (postFrameCallback)
   onInit() {}
 
+  /// Obtém largura da tela
   double get screenWidth => MediaQuery.of(context).size.width;
+
+  /// Obtém altura da tela
   double get screenHeight => MediaQuery.of(context).size.height;
 
-  /// Navigate to a new screen
+  /// Navega para uma nova tela (adiciona widget da rota no topo da pilha de navegação)
   Future<void> navigateTo(String route, {Object? args}) {
     if (mounted) {
       return Navigator.of(context).pushNamed(route, arguments: args);
@@ -21,7 +26,8 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
     return Future.value();
   }
 
-  /// Navigate back unless there's only one widget in the stack
+  /// "Navega de volta", removendo a rota, ou widget atual, da pilha de navegação, 
+  /// mas não faz a navegação se este widget for o único na pilha
   Future<void> navigateBack() {
     if (mounted) {
       if (Navigator.of(context).canPop()) {
@@ -32,8 +38,8 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
     return Future.value();
   }
 
-  /// Navigate to a new screen and remove all other previously pushed routes
-  /// (empties the stack)
+  /// Navega para uma nova rota removendo todas as outras telas da pilha de navegação
+  /// (esvazia a pilha de navegação e navega para a nova rota)
   Future<void> navigateToAndReset(String route, {Object? args}) {
     if (mounted) {
       return Navigator.of(context)
@@ -43,7 +49,8 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
     return Future.value();
   }
 
-  /// Navigate to a new screen and remove the current route from the stack
+  /// Navega para uma nova tela e remove a rota atual da pilha de navegação
+  /// (substitui o widget atual pelo novo widget da rota)
   Future<void> navigateToAndReplace(String route, {Object? args}) {
     if (mounted) {
       return Navigator.of(context).pushReplacementNamed(route, arguments: args);
@@ -52,14 +59,14 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
     return Future.value();
   }
 
-  /// Remove all messages from the screen (snackbars)
+  /// Remove todas as snackbars atualmente exibidas
   void clearSnackbars() {
     if (mounted) {
       ScaffoldMessenger.of(context).clearSnackBars();
     }
   }
 
-  /// Show a message on the screen (snackbar)
+  /// Exibe uma snackbar com a mensagem fornecida pelo parâmetro [message]
   void showSnackbar(String message) {
     if (mounted) {
       clearSnackbars();

@@ -4,14 +4,16 @@ import 'package:dener/components/app_text_field/app_text_field_component.dart';
 import 'package:dener/util/base_state.dart';
 import 'package:flutter/material.dart';
 
-class DonatorSigninForm extends StatefulWidget {
-  const DonatorSigninForm({super.key});
+/// Formulário de cadastro do doador
+class DonatorSignupForm extends StatefulWidget {
+  /// Cria o formulário de cadastro do doador
+  const DonatorSignupForm({super.key});
 
   @override
-  State<DonatorSigninForm> createState() => _DonatorSigninFormState();
+  State<DonatorSignupForm> createState() => _DonatorSignupFormState();
 }
 
-class _DonatorSigninFormState extends BaseState<DonatorSigninForm> {
+class _DonatorSignupFormState extends BaseState<DonatorSignupForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

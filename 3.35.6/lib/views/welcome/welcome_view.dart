@@ -4,14 +4,16 @@ import 'package:dener/util/base_state.dart';
 import 'package:dener/util/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-class LoginView extends StatefulWidget {
-  const LoginView({super.key});
+/// tela de boas-vindas da aplicação (seleção entre doador e receptor)
+class WelcomeView extends StatefulWidget {
+  /// Cria a tela de boas-vindas da aplicação (seleção entre doador e receptor)
+  const WelcomeView({super.key});
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<WelcomeView> createState() => _WelcomeViewState();
 }
 
-class _LoginViewState extends BaseState<LoginView> {
+class _WelcomeViewState extends BaseState<WelcomeView> {
 
   @override
   Widget build(BuildContext context) {
