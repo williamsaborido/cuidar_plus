@@ -19,6 +19,6 @@ class NavigatorKey {
   /// Retorna para a tela inicial removendo todas as outras telas da pilha de navegação,
   /// usado principalmente no logoff do usuário (login expirado, por exemplo)
   Future<void> logoff() async {
-    _navigatorKey.currentState?.pushNamedAndRemoveUntil('welcome', (_) => false);
+    _navigatorKey.currentState?.pushNamedAndRemoveUntil('/welcome', (_) => false);
   }
 }

@@ -1,3 +1,5 @@
+import 'package:dener/components/app_alert_dialog/app_alert_dialog.dart';
+import 'package:dener/components/app_confirm_dialog/app_confirm_dialog.dart';
 import 'package:flutter/material.dart';
 
 /// Classe base para uso do contexo para navegação, snackbar e tamanho de tela
@@ -83,4 +85,46 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
       ScaffoldMessenger.of(context).showSnackBar(snackbar);
     }
   }
+
+  /// Exibe um modal com o conteúdo fornecido pelo parâmetro [content],
+  /// se [dismissible] for true, o modal pode ser fechado ao clicar fora dele
+  void showModal(Widget content, {bool dismissible = true}) {
+    showDialog(
+      context: context,
+      barrierDismissible: dismissible,
+      builder: (context){
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          backgroundColor: Colors.white,
+          child: content,
+        );
+      },
+    );
+  }
+
+  /// Exibe um diálogo de confirmação com a mensagem fornecida pelo parâmetro [message], 
+  /// aceitando um título opcional em [title], retornando true se o usuário confirmar
+  Future<bool> confirm(String message, { String? title }){
+    return showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AppConfirmDialog(message: message, title: title);
+      },
+    ).then((value) => value ?? false);
+  }
+
+  /// Exibe um diálogo de alerta com a mensagem fornecida pelo parâmetro [message],
+  /// aceitando um título opcional em [title]
+  Future<void> alert(String message, { String? title }){
+    return showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AppAlertDialog(message: message, title: title);
+      },
+    );
+  }  
 }

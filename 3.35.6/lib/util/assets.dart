@@ -1,5 +1,5 @@
 
-/// Classe que contém os caminhos dos asssets (imagens, ícones, etc.) do aplicativo
+/// Classe que contém os caminhos dos asssets (imagens, ícones, texto etc.) do aplicativo
 class Assets {
   /// Caminho do logo do app
   static const String companyLogo = 'assets/images/company_logo.png';
@@ -18,4 +18,8 @@ class Assets {
 
   /// Caminho do ícone de seta para trás (botão de voltar)
   static const String backArrow = 'assets/images/back_arrow.png';
+
+  /// Caminho do texto de termos e condições
+  static const String termsAndConditions = 'assets/text/eula.txt';
+
 }

@@ -1,5 +1,6 @@
 import 'package:dener/components/app_form_button/app_form_button.component.dart';
 import 'package:dener/components/app_header/app_header_component.dart';
+import 'package:dener/components/app_eula_modal/app_eula_modal_component.dart';
 import 'package:dener/components/app_text_field/app_text_field_component.dart';
 import 'package:dener/util/base_state.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,12 @@ class DonatorSignupForm extends StatefulWidget {
 }
 
 class _DonatorSignupFormState extends BaseState<DonatorSignupForm> {
+
+  @override
+  onInit() {    
+    showModal(AppEulaModalComponent(), dismissible: false);      
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
