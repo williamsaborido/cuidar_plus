@@ -11,7 +11,7 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
   }
 
   /// Método chamado após a inicialização do widget (postFrameCallback)
-  onInit() {}
+  void onInit() {}
 
   /// Obtém largura da tela
   double get screenWidth => MediaQuery.of(context).size.width;

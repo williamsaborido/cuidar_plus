@@ -7,11 +7,14 @@ class AppHeaderComponent extends StatelessWidget {
   /// Ação ao pressionar o botão de ação (voltar ou fechar)
   final VoidCallback? action;
 
+  /// O texto do cabeçalho
+  final String labelText;
+
   /// Indica se o botão de ação é de fechar (true) ou voltar (false)
   final bool close;
 
   /// Cria o cabeçalho do aplicativo com logo, título e botão de ação
-  const AppHeaderComponent({this.action, this.close = false, super.key});
+  const AppHeaderComponent({this.action, required this.labelText,  this.close = false, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +39,7 @@ class AppHeaderComponent extends StatelessWidget {
             Image.asset(Assets.companyLogo, height: 90),
           ],
         ),
-        Text('Cadastre-se', style: textStyles.titleBlack),
+        Text(labelText, style: textStyles.titleBlack),
       ],
     );
   }

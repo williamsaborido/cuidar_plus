@@ -8,6 +8,9 @@ class AppTextFieldComponent extends StatelessWidget {
   /// Indica se o campo é de senha (oculta o texto)
   final bool masked;
 
+  /// Ícone indicativo no final do campo de texto
+  final Widget? suffix;
+
   final _visible = ValueNotifier<bool>(false);
 
   final _border = UnderlineInputBorder(
@@ -16,7 +19,7 @@ class AppTextFieldComponent extends StatelessWidget {
   );
 
   /// Cria um campo de texto estilizado com bordas inferiores arredondadas
-  AppTextFieldComponent({this.labelText, this.masked = false, super.key});
+  AppTextFieldComponent({this.labelText, this.masked = false, this.suffix, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,7 @@ class AppTextFieldComponent extends StatelessWidget {
               onTap: () => _visible.value = !_visible.value,
               child: Icon(_visible.value ? Icons.visibility : Icons.visibility_off),
             )
-            : null,
+            : suffix,
           ),
         );
       }
