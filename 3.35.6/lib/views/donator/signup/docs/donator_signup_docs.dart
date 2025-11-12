@@ -4,8 +4,9 @@ import 'package:dener/components/app_header/app_header_component.dart';
 import 'package:dener/util/base_state.dart';
 import 'package:flutter/material.dart';
 
+/// Formulário de submissão dos documentos do doador
 class DonatorSignupDocs extends StatefulWidget {
-
+  /// Cria o formulário de submissão dos documentos do doador
   const DonatorSignupDocs({ super.key });
 
   @override
@@ -14,6 +15,7 @@ class DonatorSignupDocs extends StatefulWidget {
 
 class _DonatorSignupDocsState extends BaseState<DonatorSignupDocs> {
 
+  /// Abre a tela de captura de foto, retornando true se o usuário confirmou a imagem capturada
   Future<bool> getPicture() async {
     return true;
   }

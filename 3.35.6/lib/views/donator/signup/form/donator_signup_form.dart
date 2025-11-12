@@ -22,6 +22,7 @@ class _DonatorSignupFormState extends BaseState<DonatorSignupForm> {
     showModal(AppEulaModalComponent(), dismissible: false);      
   }
 
+  /// Fecha a tela de cadastro após confirmação do usuário
   void close() {
     confirm('Deseja cancelar o processo de cadastro?')
     .then((cancel){

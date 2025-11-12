@@ -8,7 +8,7 @@ class AppCaptureButton extends StatefulWidget {
   /// Ícone indicativo do tipo de dado a ser capturado
   final IconData icon;
 
-  /// Função que retorna um booleano para alterar o estado entre "preenchido" e "pendente"
+  /// Função que retorna um booleano para alterar o estado entre 'preenchido' e 'pendente'
   final bool Function() onTap;
 
   /// Cria um botão que indica se a captura foi feita indicando com um ícone a esquerda

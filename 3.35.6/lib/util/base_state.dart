@@ -41,8 +41,7 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
   }
 
   /// Navega para uma nova rota removendo todas as outras telas da pilha de navegação
-  /// (esvazia a pilha de navegação e navega para a nova rota)
-  Future<void> navigateToAndReset(String route, {Object? args}) {
+    Future<void> navigateToAndReset(String route, {Object? args}) {
     if (mounted) {
       return Navigator.of(context)
           .pushNamedAndRemoveUntil(route, (_) => false, arguments: args);
@@ -52,8 +51,7 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
   }
 
   /// Navega para uma nova tela e remove a rota atual da pilha de navegação
-  /// (substitui o widget atual pelo novo widget da rota)
-  Future<void> navigateToAndReplace(String route, {Object? args}) {
+    Future<void> navigateToAndReplace(String route, {Object? args}) {
     if (mounted) {
       return Navigator.of(context).pushReplacementNamed(route, arguments: args);
     }

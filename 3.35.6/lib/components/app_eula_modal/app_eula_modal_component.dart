@@ -7,7 +7,9 @@ import 'package:dener/util/navigator_key.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+/// Caixa de diálogo com os termos de uso para o usuário final (EULA)
 class AppEulaModalComponent extends StatefulWidget {
+  /// Cria uma caixa de diálogo com os termos de uso para o usuário final (EULA)
   const AppEulaModalComponent({super.key});
 
   @override
