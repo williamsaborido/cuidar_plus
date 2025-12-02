@@ -17,7 +17,8 @@ class _DonatorSignupDocsState extends BaseState<DonatorSignupDocs> {
 
   /// Abre a tela de captura de foto, retornando true se o usuário confirmou a imagem capturada
   Future<bool> getPicture() async {
-    return true;
+    final result = await navigateToAndReturn('/donator/signup/capture');
+    return (result as bool?) ?? false;
   }
 
    @override
@@ -30,10 +31,10 @@ class _DonatorSignupDocsState extends BaseState<DonatorSignupDocs> {
             spacing: 40,
             children: [
               AppHeaderComponent(action: navigateBack, labelText: 'Envio de Documentos', close: false),
-              AppCaptureButton(textLabel: 'Foto RG - Frente', icon: Icons.account_circle, onTap: () => true,),
-              AppCaptureButton(textLabel: 'Foto RG - Verso', icon: Icons.account_circle, onTap: () => true,),
-              AppCaptureButton(textLabel: 'Registrar facial', icon: Icons.photo_camera, onTap: () => true,),
-              AppCaptureButton(textLabel: 'Comprovante de residência', icon: Icons.home, onTap: () => true,),
+              AppCaptureButton(textLabel: 'Foto RG - Frente', icon: Icons.account_circle, onTap: getPicture),
+              AppCaptureButton(textLabel: 'Foto RG - Verso', icon: Icons.account_circle, onTap: getPicture),
+              AppCaptureButton(textLabel: 'Registrar facial', icon: Icons.photo_camera, onTap: getPicture),
+              AppCaptureButton(textLabel: 'Comprovante de residência', icon: Icons.home, onTap: getPicture),
               SizedBox(height: 30),
               AppFormButtonComponent(labelText: 'Cadastrar', onTap: () {}),
             ],

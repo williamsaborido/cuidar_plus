@@ -9,7 +9,7 @@ class AppCaptureButton extends StatefulWidget {
   final IconData icon;
 
   /// Função que retorna um booleano para alterar o estado entre 'preenchido' e 'pendente'
-  final bool Function() onTap;
+  final Future<bool> Function() onTap;
 
   /// Cria um botão que indica se a captura foi feita indicando com um ícone a esquerda
   const AppCaptureButton({
@@ -43,7 +43,7 @@ class _AppCaptureButtonState extends State<AppCaptureButton> {
         Expanded(
           child: InkWell(
             borderRadius: BorderRadius.circular(10),
-            onTap: () => ready.value = widget.onTap(),
+            onTap: () => widget.onTap().then((value) => ready.value = value),
             child: Container(
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(

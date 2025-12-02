@@ -24,6 +24,8 @@ Você está em situação de vulnerabilidade, está passando um momento difícil
 ![Cuidar+](/resources/pub/screenshot-2025-11-11_22.49.52.131.png "Cuidar+")
 ![Cuidar+](/resources/pub/screenshot-2025-11-11_22.50.16.304.png "Cuidar+")
 ![Cuidar+](/resources/pub/screenshot-2025-11-11_22.50.53.932.png "Cuidar+")
+![Cuidar+](/resources/pub/screenshot-2025-12-02_00.25.15.755.png "Cuidar+")
+![Cuidar+](/resources/pub/screenshot-2025-12-02_00.25.52.047.png "Cuidar+")
 
 ### Sobre o projeto:
 1. **Objetivo**
