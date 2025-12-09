@@ -1,5 +1,6 @@
 import 'package:dener/util/app_text_styles.dart';
 import 'package:dener/util/navigator_key.dart';
+import 'package:dener/views/donator/area/home/donator_area_home.dart';
 import 'package:dener/views/donator/login/donator_login_view.dart';
 import 'package:dener/views/donator/signup/capture/donator_signup_capture.dart';
 import 'package:dener/views/donator/signup/docs/donator_signup_docs.dart';
@@ -40,6 +41,7 @@ class App extends StatelessWidget{
           '/donator/signup/form': (context) => const DonatorSignupForm(),
           '/donator/signup/docs': (context) => const DonatorSignupDocs(),
           '/donator/signup/capture': (context) => const DonatorSignupCapture(),
+          '/donator/area/home': (context) => const DonatorAreaHome(),          
         },
         // Chave do Navigator para navegação global
         navigatorKey: navigatorKey,

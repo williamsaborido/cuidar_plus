@@ -68,7 +68,7 @@ class _WelcomeViewState extends BaseState<WelcomeView> {
                   title: 'Sou Receptor',
                   assetImage: Assets.avatarRecipient,
                   onTap: () {
-                    print('Receptor');
+                    
                   },
                 ),
               ],

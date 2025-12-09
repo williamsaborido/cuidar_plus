@@ -36,7 +36,9 @@ class _DonatorSignupDocsState extends BaseState<DonatorSignupDocs> {
               AppCaptureButton(textLabel: 'Registrar facial', icon: Icons.photo_camera, onTap: getPicture),
               AppCaptureButton(textLabel: 'Comprovante de residência', icon: Icons.home, onTap: getPicture),
               SizedBox(height: 30),
-              AppFormButtonComponent(labelText: 'Cadastrar', onTap: () {}),
+              AppFormButtonComponent(labelText: 'Cadastrar', onTap: () {
+                super.navigateToAndReset('/donator/area/home');
+                }),
             ],
           ),
         ),
