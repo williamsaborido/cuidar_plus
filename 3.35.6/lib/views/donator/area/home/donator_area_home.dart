@@ -1,4 +1,5 @@
-import 'package:dener/components/app_home_button/app_home_button.dart';
+import 'package:dener/components/app_home_button/app_home_button_component.dart';
+import 'package:dener/components/app_home_drawer/app_donator_home_drawer_component.dart';
 import 'package:dener/util/app_text_styles.dart';
 import 'package:dener/util/assets.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,9 @@ class DonatorAreaHome extends StatelessWidget {
           const SizedBox(width: 10),
         ],
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: AppDonatorHomeDrawerComponent(),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(Icons.smart_toy),
@@ -37,7 +40,7 @@ class DonatorAreaHome extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 60),
-              child: AppHomeButton(
+              child: AppHomeButtonComponent(
                 labelText: 'Pontos de Recolhimento',
                 iconData: Icons.pin_drop,
                 onPressed: () {},
@@ -45,7 +48,7 @@ class DonatorAreaHome extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 60),
-              child: AppHomeButton(
+              child: AppHomeButtonComponent(
                 labelText: 'Doação direta',
                 iconData: Icons.handshake,
                 onPressed: () {},

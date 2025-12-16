@@ -1,5 +1,5 @@
-import 'package:dener/components/app_alert_dialog/app_alert_dialog.dart';
-import 'package:dener/components/app_confirm_dialog/app_confirm_dialog.dart';
+import 'package:dener/components/app_alert_dialog/app_alert_dialog_component.dart';
+import 'package:dener/components/app_confirm_dialog/app_confirm_dialog_component.dart';
 import 'package:flutter/material.dart';
 
 /// Classe base para uso do contexo para navegação, snackbar e tamanho de tela
@@ -118,7 +118,7 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
       context: context,
       barrierDismissible: false,
       builder: (context) {
-        return AppConfirmDialog(message: message, title: title);
+        return AppConfirmDialogComponent(message: message, title: title);
       },
     ).then((value) => value ?? false);
   }
@@ -130,7 +130,7 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
       context: context,
       barrierDismissible: false,
       builder: (context) {
-        return AppAlertDialog(message: message, title: title);
+        return AppAlertDialogComponent(message: message, title: title);
       },
     );
   }  

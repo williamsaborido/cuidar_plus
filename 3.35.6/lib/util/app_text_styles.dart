@@ -41,6 +41,7 @@ class AppTextStyles extends InheritedWidget {
   final TextStyle regularBlack = TextStyle(
     fontSize: 18,
     fontFamily: 'Arima Madurai',
+    fontWeight: FontWeight.bold
   );  
 
   /// Estilo de texto para textos regulares em cinza

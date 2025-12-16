@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Botão que indica se a captura foi feita indicando com um ícone a esquerda
-class AppCaptureButton extends StatefulWidget {
+class AppCaptureButtonComponent extends StatefulWidget {
   /// Texto do rótulo do botão
   final String textLabel;
 
@@ -12,7 +12,7 @@ class AppCaptureButton extends StatefulWidget {
   final Future<bool> Function() onTap;
 
   /// Cria um botão que indica se a captura foi feita indicando com um ícone a esquerda
-  const AppCaptureButton({
+  const AppCaptureButtonComponent({
     required this.textLabel,
     required this.icon,
     required this.onTap,
@@ -20,10 +20,10 @@ class AppCaptureButton extends StatefulWidget {
   });
 
   @override
-  State<AppCaptureButton> createState() => _AppCaptureButtonState();
+  State<AppCaptureButtonComponent> createState() => _AppCaptureButtonComponentState();
 }
 
-class _AppCaptureButtonState extends State<AppCaptureButton> {
+class _AppCaptureButtonComponentState extends State<AppCaptureButtonComponent> {
   final ready = ValueNotifier<bool>(false);
 
   @override

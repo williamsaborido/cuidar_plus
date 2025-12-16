@@ -1,4 +1,4 @@
-import 'package:dener/components/app_capture_button/app_capture_button.dart';
+import 'package:dener/components/app_capture_button/app_capture_button_component.dart';
 import 'package:dener/components/app_form_button/app_form_button.component.dart';
 import 'package:dener/components/app_header/app_header_component.dart';
 import 'package:dener/util/base_state.dart';
@@ -31,10 +31,10 @@ class _DonatorSignupDocsState extends BaseState<DonatorSignupDocs> {
             spacing: 40,
             children: [
               AppHeaderComponent(action: navigateBack, labelText: 'Envio de Documentos', close: false),
-              AppCaptureButton(textLabel: 'Foto RG - Frente', icon: Icons.account_circle, onTap: getPicture),
-              AppCaptureButton(textLabel: 'Foto RG - Verso', icon: Icons.account_circle, onTap: getPicture),
-              AppCaptureButton(textLabel: 'Registrar facial', icon: Icons.photo_camera, onTap: getPicture),
-              AppCaptureButton(textLabel: 'Comprovante de residência', icon: Icons.home, onTap: getPicture),
+              AppCaptureButtonComponent(textLabel: 'Foto RG - Frente', icon: Icons.account_circle, onTap: getPicture),
+              AppCaptureButtonComponent(textLabel: 'Foto RG - Verso', icon: Icons.account_circle, onTap: getPicture),
+              AppCaptureButtonComponent(textLabel: 'Registrar facial', icon: Icons.photo_camera, onTap: getPicture),
+              AppCaptureButtonComponent(textLabel: 'Comprovante de residência', icon: Icons.home, onTap: getPicture),
               SizedBox(height: 30),
               AppFormButtonComponent(labelText: 'Cadastrar', onTap: () {
                 super.navigateToAndReset('/donator/area/home');

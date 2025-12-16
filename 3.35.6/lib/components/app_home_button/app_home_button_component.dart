@@ -1,12 +1,12 @@
 import 'package:dener/util/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-class AppHomeButton extends StatelessWidget {
+class AppHomeButtonComponent extends StatelessWidget {
   final String labelText;
   final VoidCallback? onPressed;
   final IconData iconData;
 
-  const AppHomeButton({
+  const AppHomeButtonComponent({
     required this.labelText,
     this.onPressed,
     required this.iconData,
